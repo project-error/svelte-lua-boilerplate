@@ -1,6 +1,10 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
 
+  "strict": true,
+  "allowJS": true,
+  "allowSyntheticDefaultImports": true,
+  "noFallthroughCasesInSwitch": true,
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
 }
