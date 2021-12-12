@@ -5,7 +5,7 @@ interface NuiMessage<T = unknown> {
     data: T;
 }
 
-export default function useNuiEvent<T = unknown>(action: string, handler: (data: T) => void) {
+export function useNuiEvent<T = unknown>(action: string, handler: (data: T) => void) {
     const eventListener = (event: MessageEvent<NuiMessage<T>>) => {
         const {action: eventAction, data} = event.data
 
