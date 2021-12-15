@@ -1,7 +1,7 @@
 export async function fetchNui<T = any>(
   eventName: string,
-  data: unknown = {},
-  ): Promise<T> {
+  data: unknown = {}
+): Promise<T> {
   const options = {
     method: "post",
     headers: {
