@@ -1,14 +1,12 @@
-Citizen.CreateThread(function()
-    RegisterCommand('test', function()
-        SendNUIMessage({
-            action = 'setVisible',
-            data = true
-        })
-        SetNuiFocus(true, true)
-    end)
+RegisterCommand('svelte:show', function()
+    SendNUIMessage({
+        action = 'visibility',
+        data = true
+    })
+    SetNuiFocus(true, true)
+end)
 
-    RegisterNUICallback('hideUI', function()
-        print('hidden')
-        SetNuiFocus(false, false)
-    end)
+RegisterNUICallback('hideUI', function(_, cb)
+    cb({})
+    SetNuiFocus(false, false)
 end)

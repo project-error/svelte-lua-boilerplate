@@ -1,21 +1,24 @@
 <script lang="ts">
   import { useNuiEvent } from "../utils/useNuiEvent";
   import { fetchNui } from "../utils/fetchNui";
-  import { onMount, setContext } from "svelte";
-  import { writable } from "svelte/store";
+  import { onMount } from "svelte";
+  import { visibility } from "../store/stores";
 
-  let isVisible = writable(false);
-  setContext("visibility", isVisible);
+  let isVisible: boolean;
 
-  useNuiEvent<boolean>("setVisible", (visible) => {
-    $isVisible = visible;
+  visibility.subscribe((visible) => {
+    isVisible = visible;
+  });
+
+  useNuiEvent<boolean>("visibility", (visible) => {
+    visibility.set(visible);
   });
 
   onMount(() => {
     const keyHandler = (e: KeyboardEvent) => {
-      if ($isVisible && ["Escape"].includes(e.code)) {
+      if (isVisible && ["Escape"].includes(e.code)) {
         fetchNui("hideUI");
-        $isVisible = false;
+        visibility.set(false);
       }
     };
 
@@ -25,6 +28,6 @@
   });
 </script>
 
-{#if $isVisible}
+{#if isVisible}
   <slot />
 {/if}

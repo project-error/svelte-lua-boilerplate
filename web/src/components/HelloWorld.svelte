@@ -1,12 +1,16 @@
 <script lang="ts">
-  const buttonClick = () => {
-    console.log("click");
-  };
+  import { visibility } from "../store/stores";
+  import { fetchNui } from "../utils/fetchNui";
 </script>
 
 <div class="container">
   <h2>Svelte NUI Popup!</h2>
-  <button on:click={buttonClick}>Click me</button>
+  <button
+    on:click={() => {
+      visibility.set(false);
+      fetchNui("hideUI");
+    }}>Close popup</button
+  >
 </div>
 
 <style>
@@ -24,7 +28,7 @@
     border-radius: 5px;
     width: 15%;
     height: 15%;
-    font-size: 1vh;
+    font-size: 1.5vh;
     color: white;
     background-color: #ff3c04;
   }
