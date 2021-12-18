@@ -9,31 +9,29 @@
   }
 
   let clientData: ReturnData;
+
+  const handleClientData = () => {
+    fetchNui('getClientData')
+      .then((returnData) => {
+        clientData = returnData;
+      })
+      .catch((e) => {
+        clientData = { x: 100, y: 100, z: 100 };
+      });
+  };
+
+  const closeDialog = () => {
+    visibility.set(false);
+    fetchNui('hideUI');
+  };
 </script>
 
 <div class="container">
   <h2>Svelte NUI Popup!</h2>
   <div style="margin: 0.3vh 0;">Player coords: {JSON.stringify(clientData) || ''}</div>
   <div class="btn-wrapper">
-    <button
-      on:click={() => {
-        fetchNui('getClientData')
-          .then((returnData) => {
-            clientData = returnData;
-          })
-          .catch((e) => {
-            clientData = { x: 100, y: 100, z: 100 };
-          });
-      }}
-    >
-      Get client coords
-    </button>
-    <button
-      on:click={() => {
-        visibility.set(false);
-        fetchNui('hideUI');
-      }}>Close popup</button
-    >
+    <button on:click={handleClientData}> Get client coords </button>
+    <button on:click={closeDialog}>Close popup</button>
   </div>
   <span>Or press the escape key!</span>
 </div>
