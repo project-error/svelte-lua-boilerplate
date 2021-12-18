@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { useNuiEvent } from "../utils/useNuiEvent";
-  import { fetchNui } from "../utils/fetchNui";
-  import { onMount } from "svelte";
-  import { visibility } from "../store/stores";
+  import { useNuiEvent } from '../utils/useNuiEvent';
+  import { fetchNui } from '../utils/fetchNui';
+  import { onMount } from 'svelte';
+  import { visibility } from '../store/stores';
 
   let isVisible: boolean;
 
@@ -10,24 +10,26 @@
     isVisible = visible;
   });
 
-  useNuiEvent<boolean>("visibility", (visible) => {
+  useNuiEvent<boolean>('visibility', (visible) => {
     visibility.set(visible);
   });
 
   onMount(() => {
     const keyHandler = (e: KeyboardEvent) => {
-      if (isVisible && ["Escape"].includes(e.code)) {
-        fetchNui("hideUI");
+      if (isVisible && ['Escape'].includes(e.code)) {
+        fetchNui('hideUI');
         visibility.set(false);
       }
     };
 
-    window.addEventListener("keydown", keyHandler);
+    window.addEventListener('keydown', keyHandler);
 
-    return () => window.removeEventListener("keydown", keyHandler);
+    return () => window.removeEventListener('keydown', keyHandler);
   });
 </script>
 
-{#if isVisible}
-  <slot />
-{/if}
+<main>
+  {#if isVisible}
+    <slot />
+  {/if}
+</main>

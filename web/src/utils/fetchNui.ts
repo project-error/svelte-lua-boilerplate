@@ -10,7 +10,9 @@ export async function fetchNui<T = any>(
     body: JSON.stringify(data),
   };
 
-  const resourceName = (window as any).GetParentResourceName();
+  const resourceName = (window as any).GetParentResourceName
+    ? (window as any).GetParentResourceName()
+    : "nui-frame-app";
 
   const resp = await fetch(`https://${resourceName}/${eventName}`, options);
 

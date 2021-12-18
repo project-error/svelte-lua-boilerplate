@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { visibility } from "../store/stores";
-  import { fetchNui } from "../utils/fetchNui";
+  import { visibility } from '../store/stores';
+  import { fetchNui } from '../utils/fetchNui';
 </script>
 
 <div class="container">
@@ -8,7 +8,7 @@
   <button
     on:click={() => {
       visibility.set(false);
-      fetchNui("hideUI");
+      fetchNui('hideUI');
     }}>Close popup</button
   >
 </div>
@@ -19,7 +19,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
