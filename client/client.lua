@@ -1,6 +1,6 @@
 RegisterCommand('svelte:show', function()
     SendNUIMessage({
-        action = 'visibility',
+        action = 'setVisible',
         data = true
     })
     SetNuiFocus(true, true)

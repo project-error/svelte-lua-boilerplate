@@ -10,7 +10,7 @@
     isVisible = visible;
   });
 
-  useNuiEvent<boolean>('visibility', (visible) => {
+  useNuiEvent<boolean>('setVisible', (visible) => {
     visibility.set(visible);
   });
 
