@@ -6,6 +6,15 @@ RegisterCommand('svelte:show', function()
     SetNuiFocus(true, true)
 end)
 
+RegisterNUICallback('getClientData', function(_, cb)
+    local playerCoords = GetEntityCoords(PlayerPedId())
+    cb({
+        x = math.ceil(playerCoords.x),
+        y = math.ceil(playerCoords.y),
+        z = math.ceil(playerCoords.z)
+    })
+end)
+
 RegisterNUICallback('hideUI', function(_, cb)
     cb({})
     SetNuiFocus(false, false)
