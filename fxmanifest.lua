@@ -13,6 +13,6 @@ client_script "client/**/*"
 server_script "server/**/*"
 
 files {
-  'web/public/index.html',
-  'web/public/**/*'
+  'web/build/index.html',
+  'web/build/**/*'
 }
