@@ -7,7 +7,7 @@ This repository is a basic boilerplate for getting started
 with Svelte in NUI. It can be used for both in browser and
 in game development.
 
-Utilizing `Rollup.js` allows us to have hot builds while developing in game
+Utilizing `Vite` allows us to have hot builds while developing in game
 by restarting the resource, instead of having to make a production build.
 
 This version of the boilerplate is meant for the CfxLua runtime.
@@ -141,10 +141,11 @@ These are small but useful included utilities.
 
 
 **Hot builds**
-When developing in-game or in browser you can use the hot build
-system by running the `dev` script. This will write changes to disk
-meaning all that is required is a resource restart to update the
-game script.
+When developing in-game you can use the hot build system by running
+the `dev:game` script. This will write changes to disk meaning all
+that is required is a resource restart to update the game script.
+
+For development in browser you can just run `dev` instead.
 
 **Usage**
 ```sh
