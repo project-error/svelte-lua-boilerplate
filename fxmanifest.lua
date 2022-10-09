@@ -7,7 +7,7 @@ version '1.0.0'
 
 lua54 'yes'
 
-ui_page 'web/public/index.html'
+ui_page 'web/build/index.html'
 
 client_script "client/**/*"
 server_script "server/**/*"
