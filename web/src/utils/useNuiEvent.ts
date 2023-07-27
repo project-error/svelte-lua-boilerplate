@@ -1,5 +1,3 @@
-import { onMount, onDestroy } from "svelte";
-
 interface NuiMessage<T = unknown> {
   action: string;
   data: T;
@@ -17,15 +15,22 @@ interface NuiMessage<T = unknown> {
  *
  **/
 
+type NuiEventHandler<T = any> = (data: T) => void;
+
+const eventListeners = new Map<string, NuiEventHandler>();
+
+const eventListener = (event: MessageEvent<NuiMessage>) => {
+  const { action, data } = event.data;
+  const handler = eventListeners.get(action);
+
+  if (handler) handler(data);
+};
+
+window.addEventListener("message", eventListener);
+
 export function useNuiEvent<T = unknown>(
   action: string,
-  handler: (data: T) => void
+  handler: NuiEventHandler<T>
 ) {
-  const eventListener = (event: MessageEvent<NuiMessage<T>>) => {
-    const { action: eventAction, data } = event.data;
-
-    eventAction === action && handler(data);
-  };
-  onMount(() => window.addEventListener("message", eventListener));
-  onDestroy(() => window.removeEventListener("message", eventListener));
+  eventListeners.set(action, handler);
 }
