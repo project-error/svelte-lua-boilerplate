@@ -14,7 +14,7 @@ This version of the boilerplate is meant for the CfxLua runtime.
 
 ## Requirements
 * [Node > v10.6](https://nodejs.org/en/)
-* [Yarn](https://yarnpkg.com/getting-started/install) (Preferred but not required)
+* [pnpm](https://pnpm.io/installation) (Highly recommended over yarn or npm)
 
 *A basic understanding of the modern web development workflow. If you don't 
 know this yet, Svelte might not be for you just yet.*
@@ -26,11 +26,8 @@ it within your `resources` folder
 
 ### Installation
 
-*The boilerplate was made using `yarn` but is still compatible with
-`npm`.*
-
 Install dependencies by navigating to the `web` folder within
-a terminal of your choice and type `npm i` or `yarn`.
+a terminal of your choice and type `pnpm i`.
 
 ## Features
 
@@ -149,10 +146,7 @@ For development in browser you can just run `dev` instead.
 
 **Usage**
 ```sh
-# yarn
-yarn dev
-# npm
-npm run dev
+pnpm dev
 ```
 
 **Production Builds**
@@ -163,8 +157,7 @@ must create a production build that is optimized and minimized.
 You can do this by running the following:
 
 ```sh
-npm run build
-yarn build 
+pnpm build
 ```
 
 ## Additional Notes
