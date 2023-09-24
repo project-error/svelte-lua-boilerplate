@@ -19,13 +19,13 @@ devDependencies:
     version: 3.4.6(svelte@4.1.1)
   svelte-preprocess:
     specifier: ^5.0.4
-    version: 5.0.4(svelte@4.1.1)(typescript@5.1.6)
+    version: 5.0.4(svelte@4.1.1)(typescript@5.2.2)
   tslib:
     specifier: ^2.6.1
     version: 2.6.1
   typescript:
-    specifier: ^5.1.6
-    version: 5.1.6
+    specifier: ^5.2.2
+    version: 5.2.2
   vite:
     specifier: ^4.4.7
     version: 4.4.7
@@ -829,8 +829,8 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 4.1.1
-      svelte-preprocess: 5.0.4(svelte@4.1.1)(typescript@5.1.6)
-      typescript: 5.1.6
+      svelte-preprocess: 5.0.4(svelte@4.1.1)(typescript@5.2.2)
+      typescript: 5.2.2
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -852,7 +852,7 @@ packages:
       svelte: 4.1.1
     dev: true
 
-  /svelte-preprocess@5.0.4(svelte@4.1.1)(typescript@5.1.6):
+  /svelte-preprocess@5.0.4(svelte@4.1.1)(typescript@5.2.2):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -896,7 +896,7 @@ packages:
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 4.1.1
-      typescript: 5.1.6
+      typescript: 5.2.2
     dev: true
 
   /svelte@4.1.1:
@@ -929,8 +929,8 @@ packages:
     resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
     dev: true
 
-  /typescript@5.1.6:
-    resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
