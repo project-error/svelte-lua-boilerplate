@@ -1,3 +1,4 @@
+import { isEnvBrowser } from "./misc"
 /**
 * @param eventName - The endpoint eventname to target
 * @param data - Data you wish to send in the NUI Callback
@@ -7,8 +8,12 @@
 
 export async function fetchNui<T = any>(
   eventName: string,
-  data: unknown = {}
+  data: unknown = {},
+  mockData: unknown = {}
 ): Promise<T> {
+  if (isEnvBrowser() && mockData) {
+    return mockData
+  }
   const options = {
     method: "post",
     headers: {
@@ -16,7 +21,7 @@ export async function fetchNui<T = any>(
     },
     body: JSON.stringify(data),
   };
-
+  
   const resourceName = (window as any).GetParentResourceName
     ? (window as any).GetParentResourceName()
     : "nui-frame-app";
