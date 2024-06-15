@@ -1,4 +1,4 @@
-import { isEnvBrowser } from "./"
+import { isEnvBrowser } from "./misc"
 /**
 * @param eventName - The endpoint eventname to target
 * @param data - Data you wish to send in the NUI Callback
